@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
   <header class="hero" id="inicio">
@@ -40,9 +42,10 @@
       <button class="section-tab" data-section="comer" aria-pressed="false"><span>02</span> Onde comer</button>
       <button class="section-tab" data-section="mobilidade" aria-pressed="false"><span>03</span> Transporte</button>
       <button class="section-tab" data-section="natureza" aria-pressed="false"><span>04</span> Praia & cultura</button>
+      <button class="section-tab" data-section="mapa" aria-pressed="false"><span>05</span> Mapa</button>
     </nav>
 
-    <section class="days content-panel" id="dias" data-panel="roteiro">
+    <section class="days content-panel fade-in" id="dias" data-panel="roteiro">
       <div class="wrap"><p class="eyebrow">ROTEIRO DIA A DIA</p><h2>Escolha o dia</h2>
         <div class="tabs" role="tablist" aria-label="Dias da viagem">
           <button class="tab active" role="tab" aria-selected="true" aria-controls="day-8" id="tab-8" data-day="8"><small>TER</small>08</button>
@@ -51,8 +54,9 @@
           <button class="tab" role="tab" aria-selected="false" aria-controls="day-11" id="tab-11" data-day="11"><small>SEX</small>11</button>
           <button class="tab" role="tab" aria-selected="false" aria-controls="day-12" id="tab-12" data-day="12"><small>SÁB</small>12</button>
         </div>
-        <div class="day-panel active" id="day-8" role="tabpanel" aria-labelledby="tab-8">
+        <div class="day-panel active fade-in" id="day-8" role="tabpanel" aria-labelledby="tab-8">
           <div class="day-title"><p>Dia 1 · Chegada</p><h3>Conheça a vila sem agenda.</h3><span class="badge">Tudo a pé</span></div>
+          <button class="jump-to-map" data-day="8">Ver os pontos de hoje no mapa ↓</button>
           <div class="schedule">
             <article><p class="period">Chegada</p><h4>Check-in e reconhecimento</h4><p>Deixe a bagagem, confirme com a pousada o café da manhã e caminhe até a praia pelo centrinho. Salve os pontos deste site no celular.</p><a href="https://www.google.com/maps/dir/?api=1&origin=Pousada+Juventus%2C+Barra+Grande%2C+PI&destination=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia%2C+PI&travelmode=walking" target="_blank" rel="noopener">Rota a pé para a praia ↗</a></article>
             <article><p class="period">Fim de tarde</p><h4>Primeiro banho + pôr do sol</h4><p>Fique na Praia de Barra Grande, observando as velas de kitesurf e o movimento da maré. Leve água e chapéu.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Abrir praia no mapa ↗</a></article>
@@ -61,6 +65,7 @@
         </div>
         <div class="day-panel" id="day-9" role="tabpanel" aria-labelledby="tab-9" hidden>
           <div class="day-title"><p>Dia 2 · Praia</p><h3>Um dia inteiro sem sair da vila.</h3><span class="badge">Maré baixa</span></div>
+          <button class="jump-to-map" data-day="9">Ver os pontos de hoje no mapa ↓</button>
           <div class="schedule">
             <article><p class="period">Manhã</p><h4>Banco de areia</h4><p>Programe a caminhada para duas horas antes e depois da maré baixa. A areia firme se estende em direção ao mar; não avance se a maré estiver virando.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ponto de partida ↗</a></article>
             <article><p class="period">Tarde</p><h4>Almoço pé na areia</h4><p>Peça primeiro o cardápio e preços. Uma estratégia econômica: prato compartilhado, água de coco e um jantar mais leve depois.</p><a href="#comer">Comparar onde comer ↓</a></article>
@@ -69,6 +74,7 @@
         </div>
         <div class="day-panel" id="day-10" role="tabpanel" aria-labelledby="tab-10" hidden>
           <div class="day-title"><p>Dia 3 · Cultura do lugar</p><h3>Pesca, vento e vida local.</h3><span class="badge">Tudo a pé</span></div>
+          <button class="jump-to-map" data-day="10">Ver os pontos de hoje no mapa ↓</button>
           <div class="schedule">
             <article><p class="period">Manhã</p><h4>Orla em ritmo de pescador</h4><p>Caminhe cedo pela beira-mar e observe o cotidiano local. Barra Grande nasceu como vila de pescadores e hoje é referência em kitesurf.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ver a orla ↗</a></article>
             <article><p class="period">Tarde</p><h4>Praia ou descanso</h4><p>Escolha seu trecho favorito da praia. Se os ventos estiverem fortes, mantenha distância das áreas de aula e das linhas de kite.</p><a href="#cultura">Por que preservar ↓</a></article>
@@ -77,6 +83,7 @@
         </div>
         <div class="day-panel" id="day-11" role="tabpanel" aria-labelledby="tab-11" hidden>
           <div class="day-title"><p>Dia 4 · Escolha livre</p><h3>Repita o que mais gostou — ou faça um único desvio.</h3><span class="badge">Opcional</span></div>
+          <button class="jump-to-map" data-day="11">Ver os pontos de hoje no mapa ↓</button>
           <div class="schedule">
             <article><p class="period">Manhã</p><h4>Opção A: mais Barra Grande</h4><p>Volte à praia em outra faixa de maré. É o melhor plano se a intenção é descansar e manter os gastos baixos.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Praia no mapa ↗</a></article>
             <article><p class="period">Tarde</p><h4>Opção B: passeio guiado</h4><p>Se der vontade de sair, contrate previamente um passeio de mangue/observação de cavalos-marinhos ou transfer para a Barrinha. Não é necessário para uma boa viagem.</p><a href="#transporte">Contato de transfer ↓</a></article>
@@ -85,6 +92,7 @@
         </div>
         <div class="day-panel" id="day-12" role="tabpanel" aria-labelledby="tab-12" hidden>
           <div class="day-title"><p>Dia 5 · Despedida</p><h3>Feche a viagem com calma.</h3><span class="badge">Saída</span></div>
+          <button class="jump-to-map" data-day="12">Ver os pontos de hoje no mapa ↓</button>
           <div class="schedule">
             <article><p class="period">Manhã</p><h4>Café e último mergulho</h4><p>Confira o horário de check-out. Se houver tempo, faça a última caminhada até a praia, sem comprometer a saída.</p><a href="https://www.google.com/maps/dir/?api=1&origin=Pousada+Juventus%2C+Barra+Grande%2C+PI&destination=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia%2C+PI&travelmode=walking" target="_blank" rel="noopener">Rota a pé ↗</a></article>
             <article><p class="period">Antes de sair</p><h4>Transfer confirmado</h4><p>Confirme motorista, horário, ponto de encontro e valor na véspera. Em vilas pequenas, essa combinação simples evita aperto.</p><a href="https://wa.me/558695753664" target="_blank" rel="noopener">Falar com Guará pelo WhatsApp ↗</a></article>
@@ -120,10 +128,45 @@
 
     <section class="culture content-panel" id="cultura" data-panel="natureza" hidden><div class="wrap culture-grid"><div><p class="eyebrow">NATUREZA E CULTURA</p><h2>Visitar também é cuidar.</h2></div><div><p>Barra Grande integra o município de Cajueiro da Praia e a área de influência da <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/marinho/lista-de-ucs/apa-delta-do-parnaiba/informacoes-sobre-visitacao-apa-delta-do-parnaiba/area-de-protecao-ambiental-delta-do-parnaiba" target="_blank" rel="noopener">APA do Delta do Parnaíba ↗</a>. O território reúne praia, mangue, pesca e atividades como o kitesurf. Se fizer passeio de fauna, escolha condutor autorizado, mantenha distância dos animais e não alimente nem toque neles.</p><p>Como referência pública, o <a href="https://turismo.pi.gov.br/wp-content/uploads/2026/01/Rota-das-emocoes.pdf" target="_blank" rel="noopener">guia Rota das Emoções do Turismo do Piauí ↗</a> apresenta Barra Grande, Barrinha, Ponta do Sardim e experiências de canoa/caiaque no entorno. Use-o para inspirar um retorno, sem transformar esta viagem em corrida.</p></div></div></section>
 
+    <section class="mapa wrap content-panel" id="mapa" data-panel="mapa" hidden>
+      <p class="eyebrow">TUDO NO SEU LUGAR</p>
+      <h2>Um mapa, cinco dias.</h2>
+      <p class="section-lede">Cada pino é um lugar do roteiro. Filtre por dia pra ver só o que importa hoje, ou por categoria pra explorar tudo — pousada, comida, praia e transporte.</p>
+      <div class="map-controls">
+        <div class="map-days" role="group" aria-label="Filtrar pontos por dia">
+          <button class="map-day-chip active" data-day="all">Todos</button>
+          <button class="map-day-chip" data-day="8"><small>TER</small>08</button>
+          <button class="map-day-chip" data-day="9"><small>QUA</small>09</button>
+          <button class="map-day-chip" data-day="10"><small>QUI</small>10</button>
+          <button class="map-day-chip" data-day="11"><small>SEX</small>11</button>
+          <button class="map-day-chip" data-day="12"><small>SÁB</small>12</button>
+        </div>
+        <div class="map-cats" role="group" aria-label="Filtrar por categoria">
+          <button class="map-cat-chip active" data-cat="base"><span class="map-cat-dot" style="background:#db6654"></span>Hospedagem</button>
+          <button class="map-cat-chip active" data-cat="comer"><span class="map-cat-dot" style="background:#183e3d"></span>Comer</button>
+          <button class="map-cat-chip active" data-cat="natureza"><span class="map-cat-dot" style="background:#2f8f86"></span>Praia</button>
+          <button class="map-cat-chip active" data-cat="transporte"><span class="map-cat-dot" style="background:#8a7a5c"></span>Transporte</button>
+          <button class="map-cat-chip active" data-cat="comercio"><span class="map-cat-dot" style="background:#b06b35"></span>Comércio útil</button>
+          <button class="map-cat-chip active" data-cat="longe"><span class="map-cat-dot" style="background:#6b6b9a"></span>Fora da vila</button>
+        </div>
+      </div>
+      <div class="map-stage">
+        <div id="leaflet-map" class="map-canvas"></div>
+        <aside class="map-panel" id="map-panel" hidden>
+          <button class="map-panel-close" id="map-panel-close" aria-label="Fechar detalhes">×</button>
+          <div class="map-panel-body"></div>
+        </aside>
+      </div>
+      <p class="map-hint">Toque em qualquer pino para ver endereço, faixa de preço e o link direto pro Google Maps ou WhatsApp.</p>
+    </section>
+
     <section class="check wrap content-panel" data-panel="mobilidade" hidden><p class="eyebrow">ANTES DE EMBARCAR</p><h2>Checklist curto, viagem leve.</h2><div class="check-grid"><label><input type="checkbox"> Transfer de chegada combinado</label><label><input type="checkbox"> Check-in confirmado com a pousada</label><label><input type="checkbox"> Tábua de marés conferida</label><label><input type="checkbox"> Dinheiro/cartão e internet móvel</label><label><input type="checkbox"> Protetor, chapéu e garrafa d’água</label><label><input type="checkbox"> Restaurantes salvos no mapa</label></div></section>
   </main>
   <footer><div class="wrap"><p class="brand">maré <span>mansa</span></p><p>Roteiro preparado para 8–12 de setembro de 2026 · Dados consultados em agosto de 2026. Confirme horários, valores, maré e disponibilidade antes de sair.</p><p class="sources">Fontes: <a href="https://www.google.com.br/travel/hotels/entity/ChkI59OlndbstJ9VGg0vZy8xMWJ3a3o4X24xEAE" target="_blank" rel="noopener">Pousada Juventus</a> · <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/marinho/lista-de-ucs/apa-delta-do-parnaiba/informacoes-sobre-visitacao-apa-delta-do-parnaiba/area-de-protecao-ambiental-delta-do-parnaiba" target="_blank" rel="noopener">ICMBio</a> · <a href="https://turismo.pi.gov.br/" target="_blank" rel="noopener">Turismo do Piauí</a> · <a href="https://commons.wikimedia.org/wiki/File:Barra_Grande_-_Piaui.jpg" target="_blank" rel="noopener">imagem CC BY-SA</a></p></div></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="map-data.js"></script>
   <script src="script.js"></script>
+  <script src="map.js"></script>
 </body>
 </html>
 
