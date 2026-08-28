@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Roteiro leve, a pé e com links úteis para Barra Grande, Piauí.">
+  <title>Elaine & Eliton · Barra Grande · 8–12 set 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+  <header class="hero" id="inicio">
+    <nav class="nav wrap"><a class="brand" href="#inicio">Elaine <span>&</span> Eliton</a><a class="nav-link" href="#dias">Seu roteiro <span aria-hidden="true">↓</span></a></nav>
+    <div class="hero-content wrap">
+      <p class="eyebrow">CAJUEIRO DA PRAIA · PIAUÍ · 8—12 SET 2026</p>
+      <h1>Barra Grande,<br><em>no seu ritmo.</em></h1>
+      <p class="lede">A primeira viagem de vocês dois a Barra Grande: cinco dias para desacelerar entre a vila, a praia e o vento — com a Pousada Juventus como base e a maior parte do percurso a pé.</p>
+      <div class="trip-meta"><span>08—12 set 2026</span><span>·</span><a href="https://www.google.com/maps/search/?api=1&query=Pousada+Juventus%2C+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Pousada Juventus ↗</a></div>
+    </div>
+    <p class="photo-credit">Foto: Mayra Pavanello Munerato / Wikimedia Commons (CC BY-SA 3.0)</p>
+  </header>
+
+  <main>
+    <section class="intro wrap">
+      <div><p class="eyebrow">O ESSENCIAL</p><h2>Não é cidade. É vila — e isso é parte do encanto.</h2></div>
+      <div class="intro-copy"><p>Da Pousada Juventus à praia e ao centrinho, a proposta é caminhar sem pressa. Reserve transporte apenas para chegada/saída e, se quiser, para um único passeio fora da vila.</p><p class="small">O roteiro evita deslocamentos desnecessários e prioriza refeições simples, com uma ou duas escolhas especiais.</p></div>
+    </section>
+
+    <section class="quick wrap" aria-label="Informações rápidas">
+      <article><span class="icon">⌂</span><h3>Sua base</h3><p>R. Raimundo Corrêa Silva, 90. Confirme horário de check-in diretamente com a pousada.</p><a href="https://www.google.com/maps/search/?api=1&query=Pousada+Juventus%2C+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Abrir no mapa ↗</a></article>
+      <article><span class="icon">◌</span><h3>Ritmo da maré</h3><p>Na maré baixa, o banco de areia convida a caminhar mar adentro. Consulte a tábua perto da viagem.</p><a href="https://www.marinha.mil.br/chm/dados-do-gnho/tabuas-de-mare" target="_blank" rel="noopener">Ver tábua de marés ↗</a></article>
+      <article><span class="icon">↝</span><h3>Deslocamentos</h3><p>A pé na vila; combine transfer antes da chegada. Para destinos fora, peça preço fechado de ida e volta.</p><a href="#transporte">Ver contatos e dicas ↓</a></article>
+    </section>
+
+    <nav class="section-tabs wrap" aria-label="Navegação do guia">
+      <button class="section-tab active" data-section="roteiro" aria-pressed="true"><span>01</span> Roteiro</button>
+      <button class="section-tab" data-section="comer" aria-pressed="false"><span>02</span> Onde comer</button>
+      <button class="section-tab" data-section="mobilidade" aria-pressed="false"><span>03</span> Transporte</button>
+      <button class="section-tab" data-section="natureza" aria-pressed="false"><span>04</span> Praia & cultura</button>
+      <button class="section-tab" data-section="mapa" aria-pressed="false"><span>05</span> Mapa</button>
+    </nav>
+
+    <section class="days content-panel fade-in" id="dias" data-panel="roteiro">
+      <div class="wrap"><p class="eyebrow">ROTEIRO DIA A DIA</p><h2>Escolha o dia</h2>
+        <div class="tabs" role="tablist" aria-label="Dias da viagem">
+          <button class="tab active" role="tab" aria-selected="true" aria-controls="day-8" id="tab-8" data-day="8"><small>TER</small>08</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="day-9" id="tab-9" data-day="9"><small>QUA</small>09</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="day-10" id="tab-10" data-day="10"><small>QUI</small>10</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="day-11" id="tab-11" data-day="11"><small>SEX</small>11</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="day-12" id="tab-12" data-day="12"><small>SÁB</small>12</button>
+          <div class="sunset-track" aria-hidden="true"><span class="sunset-thumb" id="sunset-thumb"></span></div>
+        </div>
+        <div class="day-panel active fade-in" id="day-8" role="tabpanel" aria-labelledby="tab-8">
+          <div class="day-title"><p>Dia 1 · Chegada</p><h3>Conheça a vila sem agenda.</h3><span class="badge">Tudo a pé</span></div>
+          <button class="jump-to-map" data-day="8">Ver os pontos de hoje no mapa ↓</button>
+          <div class="schedule">
+            <article><p class="period">Chegada</p><h4>Check-in e reconhecimento</h4><p>Deixe a bagagem, confirme com a pousada o café da manhã e caminhe até a praia pelo centrinho. Salve os pontos deste site no celular.</p><a href="https://www.google.com/maps/dir/?api=1&origin=Pousada+Juventus%2C+Barra+Grande%2C+PI&destination=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia%2C+PI&travelmode=walking" target="_blank" rel="noopener">Rota a pé para a praia ↗</a></article>
+            <article><p class="period">Fim de tarde</p><h4>Primeiro banho + pôr do sol</h4><p>Fique na Praia de Barra Grande, observando as velas de kitesurf e o movimento da maré. Leve água e chapéu.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Abrir praia no mapa ↗</a></article>
+            <article><p class="period">Noite</p><h4>Jantar simples no centro</h4><p>Escolha o que parecer mais tranquilo no dia. Para começar leve, Cafézin BG é uma boa parada de café/lanche; confirme abertura.</p><a href="https://www.google.com/maps/search/?api=1&query=Cafezin+BG%2C+Barra+Grande+PI" target="_blank" rel="noopener">Cafézin BG no mapa ↗</a></article>
+          </div>
+        </div>
+        <div class="day-panel" id="day-9" role="tabpanel" aria-labelledby="tab-9" hidden>
+          <div class="day-title"><p>Dia 2 · Praia</p><h3>Um dia inteiro sem sair da vila.</h3><span class="badge">Maré baixa</span></div>
+          <button class="jump-to-map" data-day="9">Ver os pontos de hoje no mapa ↓</button>
+          <div class="schedule">
+            <article><p class="period">Manhã</p><h4>Banco de areia</h4><p>Programe a caminhada para duas horas antes e depois da maré baixa. A areia firme se estende em direção ao mar; não avance se a maré estiver virando.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ponto de partida ↗</a></article>
+            <article><p class="period">Tarde</p><h4>Almoço pé na areia</h4><p>Peça primeiro o cardápio e preços. Uma estratégia econômica: prato compartilhado, água de coco e um jantar mais leve depois.</p><a href="#comer">Comparar onde comer ↓</a></article>
+            <article><p class="period">Noite</p><h4>Vila, sorvete e descanso</h4><p>Passeie pelas ruas centrais. A Sorveteria Ora Bolas é uma opção casual para encerrar o dia.</p><a href="https://www.google.com/maps/search/?api=1&query=Sorveteria+Ora+Bolas%2C+Barra+Grande+PI" target="_blank" rel="noopener">Abrir no mapa ↗</a></article>
+          </div>
+        </div>
+        <div class="day-panel" id="day-10" role="tabpanel" aria-labelledby="tab-10" hidden>
+          <div class="day-title"><p>Dia 3 · Cultura do lugar</p><h3>Pesca, vento e vida local.</h3><span class="badge">Tudo a pé</span></div>
+          <button class="jump-to-map" data-day="10">Ver os pontos de hoje no mapa ↓</button>
+          <div class="schedule">
+            <article><p class="period">Manhã</p><h4>Orla em ritmo de pescador</h4><p>Caminhe cedo pela beira-mar e observe o cotidiano local. Barra Grande nasceu como vila de pescadores e hoje é referência em kitesurf.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ver a orla ↗</a></article>
+            <article><p class="period">Tarde</p><h4>Praia ou descanso</h4><p>Escolha seu trecho favorito da praia. Se os ventos estiverem fortes, mantenha distância das áreas de aula e das linhas de kite.</p><a href="#cultura">Por que preservar ↓</a></article>
+            <article><p class="period">Noite</p><h4>Jantar regional planejado</h4><p>Se quiser uma noite intermediária, considere o Vina: avaliações o situam como opção contemporânea. Faça reserva e confirme valores no dia.</p><a href="https://www.google.com/maps/search/?api=1&query=Vina+Restaurante%2C+Rua+Pedro+de+Castro+Medeiros+660%2C+Barra+Grande+PI" target="_blank" rel="noopener">Vina no mapa ↗</a></article>
+          </div>
+        </div>
+        <div class="day-panel" id="day-11" role="tabpanel" aria-labelledby="tab-11" hidden>
+          <div class="day-title"><p>Dia 4 · Escolha livre</p><h3>Repita o que mais gostou — ou faça um único desvio.</h3><span class="badge">Opcional</span></div>
+          <button class="jump-to-map" data-day="11">Ver os pontos de hoje no mapa ↓</button>
+          <div class="schedule">
+            <article><p class="period">Manhã</p><h4>Opção A: mais Barra Grande</h4><p>Volte à praia em outra faixa de maré. É o melhor plano se a intenção é descansar e manter os gastos baixos.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Praia no mapa ↗</a></article>
+            <article><p class="period">Tarde</p><h4>Opção B: passeio guiado</h4><p>Se der vontade de sair, contrate previamente um passeio de mangue/observação de cavalos-marinhos ou transfer para a Barrinha. Não é necessário para uma boa viagem.</p><a href="#transporte">Contato de transfer ↓</a></article>
+            <article><p class="period">Noite</p><h4>Último jantar especial</h4><p>Manga Rosa fica próximo ao Pontal da Barra e é uma escolha intermediária. O foco aqui é ambiente e cozinha regional; confirme preço e disponibilidade.</p><a href="https://www.google.com/maps/search/?api=1&query=Manga+Rosa+Bar+Restaurante%2C+Rua+Pontal+da+Barra+300%2C+Barra+Grande+PI" target="_blank" rel="noopener">Manga Rosa no mapa ↗</a></article>
+          </div>
+        </div>
+        <div class="day-panel" id="day-12" role="tabpanel" aria-labelledby="tab-12" hidden>
+          <div class="day-title"><p>Dia 5 · Despedida</p><h3>Feche a viagem com calma.</h3><span class="badge">Saída</span></div>
+          <button class="jump-to-map" data-day="12">Ver os pontos de hoje no mapa ↓</button>
+          <div class="schedule">
+            <article><p class="period">Manhã</p><h4>Café e último mergulho</h4><p>Confira o horário de check-out. Se houver tempo, faça a última caminhada até a praia, sem comprometer a saída.</p><a href="https://www.google.com/maps/dir/?api=1&origin=Pousada+Juventus%2C+Barra+Grande%2C+PI&destination=Praia+de+Barra+Grande%2C+Cajueiro+da+Praia%2C+PI&travelmode=walking" target="_blank" rel="noopener">Rota a pé ↗</a></article>
+            <article><p class="period">Antes de sair</p><h4>Transfer confirmado</h4><p>Confirme motorista, horário, ponto de encontro e valor na véspera. Em vilas pequenas, essa combinação simples evita aperto.</p><a href="https://wa.me/558695753664" target="_blank" rel="noopener">Falar com Guará pelo WhatsApp ↗</a></article>
+            <article><p class="period">Lembrança</p><h4>Deixe a praia como encontrou</h4><p>Recolha seu lixo e evite tocar na fauna. Você está dentro da área de influência da APA Delta do Parnaíba.</p><a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/marinho/lista-de-ucs/apa-delta-do-parnaiba/informacoes-sobre-visitacao-apa-delta-do-parnaiba/area-de-protecao-ambiental-delta-do-parnaiba" target="_blank" rel="noopener">Conhecer a APA ↗</a></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="food wrap content-panel" id="comer" data-panel="comer" hidden><p class="eyebrow">COMER BEM, SEM SURPRESA</p><h2>Mais opções, por faixa de gasto e momento do dia.</h2><p class="section-lede">Faixas por pessoa são estimativas para ajudar a decidir. Peça o cardápio e confirme taxa de serviço antes de sentar — preços e horários podem mudar. Endereços sem número exato devem ser confirmados pelo link de mapa.</p>
+      <div class="food-grid">
+        <article><div class="price">$</div><h3>Cafézin BG</h3><p class="address">Rua Pedro de Castro Medeiros, 538</p><p>Café, lanche ou uma refeição leve. Boa escolha para segurar o orçamento.</p><strong>~ R$ 15–45 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=Cafezin+BG%2C+Rua+Pedro+de+Castro+Medeiros+538%2C+Barra+Grande+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+        <article><div class="price">$$</div><h3>Villa dos Poetas</h3><p class="address">Rua Pedro de Castro Medeiros, 548</p><p>Regional, pé na areia. Bom para dividir baião, peixe ou porções.</p><strong>~ R$ 45–90 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=Villa+dos+Poetas%2C+Rua+Pedro+de+Castro+Medeiros+548%2C+Barra+Grande+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+        <article><div class="price">$$</div><h3>Vina Restaurante</h3><p class="address">Rua Pedro de Castro Medeiros, 660</p><p>Opção de ambiente mais arrumado, na Villa dos Poetas.</p><strong>~ R$ 70–130 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=Vina+Restaurante%2C+Rua+Pedro+de+Castro+Medeiros+660%2C+Barra+Grande+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+        <article><div class="price">$$</div><h3>Manga Rosa</h3><p class="address">Rua Pontal da Barra, 300</p><p>Uma noite de comida regional e clima de praia; melhor reservar.</p><strong>~ R$ 80–160 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=Manga+Rosa+Bar+Restaurante%2C+Rua+Pontal+da+Barra+300%2C+Barra+Grande+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+        <article><div class="price">$—$$</div><h3>Trabalha Brasil</h3><p class="address">Barra Grande · confirme ponto no mapa</p><p>Alternativa regional citada em avaliações como de preço mais justo.</p><strong>~ R$ 35–80 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=Trabalha+Brasil%2C+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+        <article><div class="price">$$</div><h3>Brasa do Mar</h3><p class="address">Centro de Barra Grande · confirme ponto</p><p>Churrasco e cozinha brasileira; para variar do peixe.</p><strong>~ R$ 60–120 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=Brasa+do+Mar%2C+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+        <article><div class="price">$—$$</div><h3>La Pizza</h3><p class="address">Centro de Barra Grande · confirme ponto</p><p>Pizzas para compartilhar, uma opção casual.</p><strong>~ R$ 45–90 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=La+Pizza%2C+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+        <article><div class="price">$</div><h3>Comida Caseira</h3><p class="address">Barra Grande · confirme ponto no mapa</p><p>Procure pelo cardápio do dia para um almoço simples.</p><strong>~ R$ 25–55 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=Restaurante+Comida+Caseira%2C+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+        <article><div class="price">$$</div><h3>Bar do Beco</h3><p class="address">Rua Pontal da Barra · ao lado da BGK</p><p>Boa opção para um drink, sem compromisso de jantar.</p><strong>~ R$ 30–80 por pessoa</strong><a href="https://www.google.com/maps/search/?api=1&query=Bar+do+Beco%2C+Rua+Pontal+da+Barra%2C+Barra+Grande+PI" target="_blank" rel="noopener">Ver no Google Maps ↗</a></article>
+      </div>
+      <aside class="budget-tip"><strong>Plano econômico realista:</strong> café na pousada + almoço de prato feito/compartilhado + lanche no fim da tarde. Deixe uma ou duas noites para os restaurantes intermediários.</aside>
+    </section>
+
+    <section class="image-break content-panel" data-panel="natureza" aria-label="Vista da praia de Barra Grande" hidden><div class="image-copy"><p class="eyebrow">ENTRE O MAR E O VENTO</p><h2>Deixe espaço para não fazer nada.</h2></div><p class="photo-credit">Foto: Mayra Pavanello Munerato / Wikimedia Commons (CC BY-SA 3.0)</p></section>
+
+    <section class="practical wrap content-panel" id="transporte" data-panel="mobilidade" hidden><div><p class="eyebrow">SEM CARRO</p><h2>Chegar, circular<br>e voltar.</h2></div><div class="practical-list">
+      <article><span>01</span><div><h3>Dentro da vila</h3><p>Vá a pé para praia, centrinho e restaurantes. Prefira sair cedo ou no fim da tarde por causa do sol. À noite, caminhe apenas pelas vias movimentadas e iluminadas.</p></div></article>
+      <article><span>02</span><div><h3>Chegada e saída</h3><p>Não conte com táxi disponível sem combinação. Agende transfer antes de viajar, com local, horário e preço registrados por mensagem.</p><a href="https://wa.me/558695753664" target="_blank" rel="noopener">Guará Transfer e Passeios · WhatsApp ↗</a></div></article>
+      <article><span>03</span><div><h3>Um passeio fora da vila</h3><p>Para Barrinha, Cajueiro Rei ou mangue, peça orçamento de carro/transfer compartilhado e confirme se espera no local ou inclui retorno. Não há necessidade de preencher todos os dias com isso.</p><a href="https://www.google.com/maps/search/?api=1&query=Praia+da+Barrinha%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Praia da Barrinha no mapa ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Cajueiro+Rei%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Cajueiro Rei no mapa ↗</a></div></article>
+      <article><span>04</span><div><h3>Rodoviária / ponto de embarque</h3><p><strong>Terminal Rodoviário de Barra Grande</strong> é a referência oficial do destino. O endereço do terminal não aparece de forma consistente em fontes públicas; confirme o ponto no mapa antes da saída. Para a Damasceno, o cadastro local informa: <strong>Barra Grande, s/n, Zona Rural, Cajueiro da Praia–PI, CEP 64222-000</strong>.</p><a href="https://www.google.com/maps/search/?api=1&query=Terminal+Rodoviario+de+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Rodoviária no Google Maps ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Empresa+Damasceno%2C+Barra+Grande%2C+Cajueiro+da+Praia+PI" target="_blank" rel="noopener">Ponto Damasceno no mapa ↗</a></div></article>
+    </div></section>
+
+    <section class="culture content-panel" id="cultura" data-panel="natureza" hidden><div class="wrap culture-grid"><div><p class="eyebrow">NATUREZA E CULTURA</p><h2>Visitar também é cuidar.</h2></div><div><p>Barra Grande integra o município de Cajueiro da Praia e a área de influência da <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/marinho/lista-de-ucs/apa-delta-do-parnaiba/informacoes-sobre-visitacao-apa-delta-do-parnaiba/area-de-protecao-ambiental-delta-do-parnaiba" target="_blank" rel="noopener">APA do Delta do Parnaíba ↗</a>. O território reúne praia, mangue, pesca e atividades como o kitesurf. Se fizer passeio de fauna, escolha condutor autorizado, mantenha distância dos animais e não alimente nem toque neles.</p><p>Como referência pública, o <a href="https://turismo.pi.gov.br/wp-content/uploads/2026/01/Rota-das-emocoes.pdf" target="_blank" rel="noopener">guia Rota das Emoções do Turismo do Piauí ↗</a> apresenta Barra Grande, Barrinha, Ponta do Sardim e experiências de canoa/caiaque no entorno. Use-o para inspirar um retorno, sem transformar esta viagem em corrida.</p></div></div></section>
+
+    <section class="mapa wrap content-panel" id="mapa" data-panel="mapa" hidden>
+      <p class="eyebrow">TUDO NO SEU LUGAR</p>
+      <h2>Um mapa, cinco dias.</h2>
+      <p class="section-lede">Cada pino é um lugar do roteiro. Filtre por dia pra ver só o que importa hoje, ou por categoria pra explorar tudo — pousada, comida, praia e transporte.</p>
+      <div class="map-controls">
+        <div class="map-days" role="group" aria-label="Filtrar pontos por dia">
+          <button class="map-day-chip active" data-day="all">Todos</button>
+          <button class="map-day-chip" data-day="8"><small>TER</small>08</button>
+          <button class="map-day-chip" data-day="9"><small>QUA</small>09</button>
+          <button class="map-day-chip" data-day="10"><small>QUI</small>10</button>
+          <button class="map-day-chip" data-day="11"><small>SEX</small>11</button>
+          <button class="map-day-chip" data-day="12"><small>SÁB</small>12</button>
+        </div>
+        <div class="map-cats" role="group" aria-label="Filtrar por categoria">
+          <button class="map-cat-chip active" data-cat="base"><span class="map-cat-dot" style="background:#e8637a"></span>Hospedagem</button>
+          <button class="map-cat-chip active" data-cat="comer"><span class="map-cat-dot" style="background:#16283d"></span>Comer</button>
+          <button class="map-cat-chip active" data-cat="natureza"><span class="map-cat-dot" style="background:#2f6690"></span>Praia</button>
+          <button class="map-cat-chip active" data-cat="transporte"><span class="map-cat-dot" style="background:#8a6f9c"></span>Transporte</button>
+          <button class="map-cat-chip active" data-cat="longe"><span class="map-cat-dot" style="background:#5e7188"></span>Fora da vila</button>
+        </div>
+      </div>
+      <div class="map-stage">
+        <div id="leaflet-map" class="map-canvas"></div>
+        <aside class="map-panel" id="map-panel" hidden>
+          <button class="map-panel-close" id="map-panel-close" aria-label="Fechar detalhes">×</button>
+          <div class="map-panel-body"></div>
+        </aside>
+      </div>
+      <p class="map-hint">Toque em qualquer pino para ver endereço, faixa de preço e o link direto pro Google Maps ou WhatsApp.</p>
+    </section>
+
+    <section class="check wrap content-panel" data-panel="mobilidade" hidden><p class="eyebrow">ANTES DE EMBARCAR</p><h2>Checklist curto, viagem leve.</h2><div class="check-grid"><label><input type="checkbox"> Transfer de chegada combinado</label><label><input type="checkbox"> Check-in confirmado com a pousada</label><label><input type="checkbox"> Tábua de marés conferida</label><label><input type="checkbox"> Dinheiro/cartão e internet móvel</label><label><input type="checkbox"> Protetor, chapéu e garrafa d’água</label><label><input type="checkbox"> Restaurantes salvos no mapa</label></div></section>
+  </main>
+  <footer><div class="wrap"><p class="brand">Elaine &amp; Eliton</p><p>Roteiro preparado para 8–12 de setembro de 2026 · Dados consultados em agosto de 2026. Confirme horários, valores, maré e disponibilidade antes de sair.</p><p class="sources">Fontes: <a href="https://www.google.com.br/travel/hotels/entity/ChkI59OlndbstJ9VGg0vZy8xMWJ3a3o4X24xEAE" target="_blank" rel="noopener">Pousada Juventus</a> · <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/marinho/lista-de-ucs/apa-delta-do-parnaiba/informacoes-sobre-visitacao-apa-delta-do-parnaiba/area-de-protecao-ambiental-delta-do-parnaiba" target="_blank" rel="noopener">ICMBio</a> · <a href="https://turismo.pi.gov.br/" target="_blank" rel="noopener">Turismo do Piauí</a> · <a href="https://commons.wikimedia.org/wiki/File:Barra_Grande_-_Piaui.jpg" target="_blank" rel="noopener">imagem CC BY-SA</a></p></div></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="map-data.js"></script>
+  <script src="script.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
+
