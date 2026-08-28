@@ -11,6 +11,10 @@ function showDay(day) {
     const selected = panel.id === `day-${day}`;
     panel.classList.toggle('active', selected);
     panel.hidden = !selected;
+    if (selected) {
+      panel.classList.remove('fade-in');
+      requestAnimationFrame(() => panel.classList.add('fade-in'));
+    }
   });
 }
 
@@ -32,8 +36,18 @@ function showSection(section) {
     tab.classList.toggle('active', selected);
     tab.setAttribute('aria-pressed', selected);
   });
-  contentPanels.forEach(panel => { panel.hidden = panel.dataset.panel !== section; });
+  contentPanels.forEach(panel => {
+    const selected = panel.dataset.panel === section;
+    panel.hidden = !selected;
+    if (selected) {
+      panel.classList.remove('fade-in');
+      requestAnimationFrame(() => panel.classList.add('fade-in'));
+    }
+  });
   document.querySelector(`[data-panel="${section}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (section === 'mapa' && window.BarraGrandeMap) {
+    setTimeout(() => window.BarraGrandeMap.initMap(), 150);
+  }
 }
 
 sectionTabs.forEach(tab => tab.addEventListener('click', () => showSection(tab.dataset.section)));
